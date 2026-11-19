@@ -52,7 +52,7 @@ Student registration, email-verification flow, sign-in and persistent HTTP-only 
 
 The local frontend uses `http://localhost:4000/api` by default while running under Vite. To override the API address, copy the root `.env.example` to `.env.local` and set `VITE_API_BASE_URL`. Only public configuration belongs in `VITE_` variables; never put a database password, service-role key or other secret in a Vite environment variable.
 
-**This is not ready for public registration yet.** Actual production email delivery, hosted API and database deployment, production cookie-domain configuration, student dashboard, cross-device production testing and the final privacy notice remain to be completed and reviewed. Password recovery is available for local development testing.
+**Public registration is not enabled yet.** Registration, verification, login, session management, password recovery, the student dashboard and account settings have been implemented for local testing. Complete the hosted API connection, same-origin Vercel proxy, production email delivery, deployed end-to-end testing and final privacy/security review before enabling public registration.
 
 ## Backend and PostgreSQL setup
 
@@ -164,7 +164,7 @@ curl -i -X POST http://localhost:4000/api/auth/register \
 
 A successful registration returns HTTP `201` and the new student's public profile fields. The password hash is not returned. Reusing the same email returns HTTP `409`.
 
-**Student accounts are still in development and are not ready for public launch.** Registration, email verification, login, session management and password recovery have been implemented for local testing. Configure and test transactional email delivery, production cookie settings, hosted PostgreSQL and the deployed API before enabling public registration. The full student dashboard and cross-device production testing remain pending.
+**Student accounts are not ready for public launch yet.** Registration, email verification, login, session management, password recovery, dashboard and account settings are implemented. The Neon staging schema has been created; hosted API deployment, Vercel-to-Render proxy testing, production transactional email delivery and final privacy/security review remain before public registration can be enabled.
 
 ## Local development workflow
 
@@ -194,7 +194,7 @@ The API's `CLIENT_ORIGIN` must include the exact frontend origin being used in t
 | `AUTH_COOKIE_SAME_SITE` | Session-cookie SameSite policy | `lax` |
 | `AUTH_COOKIE_SECURE` | Require HTTPS for the session cookie | `false` locally; `true` in production |
 
-In production, always use HTTPS and `AUTH_COOKIE_SECURE=true`. Prefer putting the frontend and API on subdomains of the same custom registrable domain (for example, `www.example.com` and `api.example.com`) and use `AUTH_COOKIE_SAME_SITE=lax`; this avoids relying on cross-site third-party cookies. Only use `AUTH_COOKIE_SAME_SITE=none` when the frontend and API genuinely need cross-site cookies, and be aware that browser privacy settings may block third-party cookies. The Resend API key must remain in the backend environment, never in a frontend `VITE_*` variable. Set `TRUST_PROXY` to the correct proxy-hop configuration for the selected API host.
+In production, always use HTTPS and `AUTH_COOKIE_SECURE=true`. For this domain-free staging deployment, the browser should call the Vercel same-origin `/api` route, and Vercel should rewrite `/api/:path*` to the Render API. This keeps the session cookie first-party and allows `AUTH_COOKIE_SAME_SITE=lax`. Do not make browser requests directly to the separate `onrender.com` hostname. The Resend API key must remain in the backend environment, never in a frontend `VITE_*` variable. Set `TRUST_PROXY=1` for the Vercel-to-Render proxy setup.
 
 ### Password recovery
 
@@ -203,10 +203,10 @@ The local password-recovery flow uses the same Resend configuration as email ver
 ## Deployment boundary
 
 - **Frontend:** Vercel, using the root-level Vite project and `dist` output.
-- **API:** a separate Node.js web service (for example, a Render web service) with `server/` as its root directory, `npm install` as its build/install command and `npm start` as its start command.
+- **API:** a separate Node.js web service (Render) with `server/` as its root directory, `npm ci` as its build command and `npm start` as its start command. Its health-check path is `/api/health`.
 - **Database:** a hosted PostgreSQL instance reachable by the API service.
 
-Set production environment variables in the API host's dashboard, including a hosted database connection string or database credentials, SSL settings and the production frontend origin. Do not upload `.env`, expose database credentials in frontend variables, or point a public API at your local `localhost` database.
+Set production environment variables in the Render service dashboard: `DATABASE_URL`, `DATABASE_SSL=true`, `DATABASE_SSL_REJECT_UNAUTHORIZED=true`, `NODE_ENV=production`, `CLIENT_ORIGIN` and `APP_BASE_URL` set to the exact Vercel origin, `AUTH_COOKIE_SAME_SITE=Lax`, `AUTH_COOKIE_SECURE=true` and `TRUST_PROXY=1`. Add `RESEND_API_KEY` and `EMAIL_FROM` only after a verified sender is configured. Once Render provides the API hostname, replace the placeholder destination in `vercel.api-proxy.example.json` and save that configuration as the root `vercel.json`. Do not upload `.env`, expose database credentials in frontend variables, or point a hosted API at your local `localhost` database.
 
 ## Branding and curriculum notes
 
@@ -239,7 +239,7 @@ The Stage 4.8 source review adds the following safeguards and checks:
 - Production frontend and email-link origins must use HTTPS, `AUTH_COOKIE_SAME_SITE` must be explicitly configured, and production session cookies must be marked `Secure`.
 - The login flow returns a student to the protected path they originally requested, while rejecting protocol-relative and backslash-based destinations.
 - Dashboard and account-settings layouts include narrow-screen wrapping safeguards for long names, email addresses, status values and section links.
-- The safe `server/.env.example` template is included. Put real local credentials only in the ignored `server/.env` file.
+- The safe backend `server/.env.example` template is included. Put real local credentials only in the ignored `server/.env` file.
 
 Backend syntax checks and automated tests are run with:
 
@@ -249,4 +249,4 @@ npm run check
 npm test
 ```
 
-The origin guard has automated tests for approved origins, rejected origins, cross-site Fetch Metadata, command-line requests and safe GET requests. Browser-level testing at narrow viewport widths and the full frontend production build must still be confirmed in the developer's local environment. Production readiness also requires a hosted database, HTTPS deployment, actual transactional email delivery, and a correctly configured proxy and cookie-domain strategy.
+The origin guard has automated tests for approved origins, rejected origins, cross-site Fetch Metadata, command-line requests and safe GET requests. Local responsive and account-flow checks have been carried out. Production readiness still requires successful hosted API/database connectivity, Vercel proxy and secure-cookie testing, actual transactional email delivery to student addresses, and a final privacy/security review.
