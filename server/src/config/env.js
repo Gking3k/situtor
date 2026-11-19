@@ -43,6 +43,19 @@ if (!databaseUrl) {
 }
 
 const nodeEnv = process.env.NODE_ENV || 'development';
+const registrationMode = (process.env.REGISTRATION_MODE || (nodeEnv === 'production' ? 'closed' : 'enabled'))
+  .trim()
+  .toLowerCase();
+if (!['closed', 'allowlist', 'enabled'].includes(registrationMode)) {
+  throw new Error('REGISTRATION_MODE must be closed, allowlist or enabled.');
+}
+const registrationTestEmails = (process.env.REGISTRATION_TEST_EMAILS || '')
+  .split(',')
+  .map((email) => email.trim().toLowerCase())
+  .filter(Boolean);
+if (registrationMode === 'allowlist' && registrationTestEmails.length === 0) {
+  throw new Error('REGISTRATION_TEST_EMAILS must contain at least one address when REGISTRATION_MODE=allowlist.');
+}
 const clientOrigins = (process.env.CLIENT_ORIGIN || 'http://localhost:5173')
   .split(',')
   .map((origin) => origin.trim().replace(/\/$/, ''))
@@ -98,6 +111,8 @@ if (nodeEnv === 'production' && !authCookieSecure) {
 
 export const env = Object.freeze({
   nodeEnv,
+  registrationMode,
+  registrationTestEmails,
   port: readInteger('PORT', 4000),
   clientOrigins,
   appBaseUrl,

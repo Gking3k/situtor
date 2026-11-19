@@ -52,7 +52,7 @@ Student registration, email-verification flow, sign-in and persistent HTTP-only 
 
 The local frontend uses `http://localhost:4000/api` by default while running under Vite. To override the API address, copy the root `.env.example` to `.env.local` and set `VITE_API_BASE_URL`. Only public configuration belongs in `VITE_` variables; never put a database password, service-role key or other secret in a Vite environment variable.
 
-**Public registration is not enabled yet.** Registration, verification, login, session management, password recovery, the student dashboard and account settings have been implemented for local testing. Complete the hosted API connection, same-origin Vercel proxy, production email delivery, deployed end-to-end testing and final privacy/security review before enabling public registration.
+**Public registration is not enabled yet.** Production registration now defaults to closed. For controlled email testing, set `REGISTRATION_MODE=allowlist` and `REGISTRATION_TEST_EMAILS` to the single Resend account email. Only that address can register. Set `REGISTRATION_MODE=enabled` only after a sending domain is verified, email delivery is tested, and the launch review is complete. Registration, verification, login, session management, password recovery, the student dashboard and account settings are implemented; public launch still requires hosted end-to-end testing and final privacy/security review.
 
 ## Backend and PostgreSQL setup
 
@@ -190,7 +190,9 @@ The API's `CLIENT_ORIGIN` must include the exact frontend origin being used in t
 |---|---|---|
 | `APP_BASE_URL` | Frontend origin used to build verification links | `http://localhost:5173` |
 | `RESEND_API_KEY` | Server-only Resend API key | Leave blank for local link testing |
-| `EMAIL_FROM` | Sender address on a Resend-verified domain | Leave blank for local link testing |
+| `EMAIL_FROM` | Sender address on a Resend-verified domain (or `onboarding@resend.dev` for account-owner testing) | Leave blank for local link testing |
+| `REGISTRATION_MODE` | `closed`, `allowlist` or `enabled`; production defaults to `closed` | `enabled` locally |
+| `REGISTRATION_TEST_EMAILS` | Comma-separated addresses allowed only when mode is `allowlist` | Blank locally |
 | `AUTH_COOKIE_SAME_SITE` | Session-cookie SameSite policy | `lax` |
 | `AUTH_COOKIE_SECURE` | Require HTTPS for the session cookie | `false` locally; `true` in production |
 
@@ -206,7 +208,7 @@ The local password-recovery flow uses the same Resend configuration as email ver
 - **API:** a separate Node.js web service (Render) with `server/` as its root directory, `npm ci` as its build command and `npm start` as its start command. Its health-check path is `/api/health`.
 - **Database:** a hosted PostgreSQL instance reachable by the API service.
 
-Set production environment variables in the Render service dashboard: `DATABASE_URL`, `DATABASE_SSL=true`, `DATABASE_SSL_REJECT_UNAUTHORIZED=true`, `NODE_ENV=production`, `CLIENT_ORIGIN` and `APP_BASE_URL` set to the exact Vercel origin, `AUTH_COOKIE_SAME_SITE=Lax`, `AUTH_COOKIE_SECURE=true` and `TRUST_PROXY=1`. Add `RESEND_API_KEY` and `EMAIL_FROM` only after a verified sender is configured. Once Render provides the API hostname, replace the placeholder destination in `vercel.api-proxy.example.json` and save that configuration as the root `vercel.json`. Do not upload `.env`, expose database credentials in frontend variables, or point a hosted API at your local `localhost` database.
+Set production environment variables in the Render service dashboard: `DATABASE_URL`, `DATABASE_SSL=true`, `DATABASE_SSL_REJECT_UNAUTHORIZED=true`, `NODE_ENV=production`, `CLIENT_ORIGIN` and `APP_BASE_URL` set to the exact Vercel origin, `AUTH_COOKIE_SAME_SITE=Lax`, `AUTH_COOKIE_SECURE=true` and `TRUST_PROXY=1`. Production registration defaults to `REGISTRATION_MODE=closed`. For the temporary Resend test, set `REGISTRATION_MODE=allowlist`, `REGISTRATION_TEST_EMAILS` to the email address registered with Resend, `RESEND_API_KEY` to the server-only key, and `EMAIL_FROM=onboarding@resend.dev`. This permits only the listed test address to register. Resend's test sender cannot deliver to general student addresses. After adding and verifying a domain you control, switch `EMAIL_FROM` to an address on that verified domain and set `REGISTRATION_MODE=enabled`; remove `REGISTRATION_TEST_EMAILS`. Once Render provides the API hostname, replace the placeholder destination in `vercel.api-proxy.example.json` and save that configuration as the root `vercel.json`. Do not upload `.env`, expose database credentials in frontend variables, or point a hosted API at your local `localhost` database.
 
 ## Branding and curriculum notes
 

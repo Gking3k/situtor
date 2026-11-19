@@ -9,6 +9,7 @@ import { hashPassword, verifyPassword } from '../utils/password.js';
 import { validateRegistrationInput } from '../utils/registration-validation.js';
 import { validateProfileUpdate } from '../utils/profile-validation.js';
 import { validatePasswordReset, validatePasswordResetRequest } from '../utils/password-reset-validation.js';
+import { isRegistrationAllowed } from '../utils/registration-access.js';
 
 const router = Router();
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -135,8 +136,8 @@ async function findActiveSessionStudent(token) {
 router.post('/register', registrationLimiter, async (request, response, next) => {
   setNoStore(response);
 
-  if (env.nodeEnv === 'production' && !emailDeliveryConfigured()) {
-    return emailNotConfiguredResponse(response);
+  if (env.registrationMode === 'closed') {
+    return response.status(503).json({ error: 'Student registration is temporarily unavailable.' });
   }
 
   const validation = validateRegistrationInput(request.body);
@@ -145,6 +146,17 @@ router.post('/register', registrationLimiter, async (request, response, next) =>
   }
 
   const { fullName, email, password } = validation.value;
+  if (!isRegistrationAllowed({
+    mode: env.registrationMode,
+    email,
+    allowedEmails: env.registrationTestEmails,
+  })) {
+    return response.status(403).json({ error: 'This email address is not enabled for registration testing.' });
+  }
+
+  if (env.nodeEnv === 'production' && !emailDeliveryConfigured()) {
+    return emailNotConfiguredResponse(response);
+  }
   const client = await pool.connect();
   let student;
   let verificationToken;
