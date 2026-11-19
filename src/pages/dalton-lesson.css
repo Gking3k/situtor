@@ -1,0 +1,80 @@
+.dalton-lesson-hero { background: radial-gradient(circle at 78% 36%, rgba(255,226,161,.42), transparent 27%), linear-gradient(140deg,#f7faf9 0%,#f2f7f8 56%,#f7f6fc 100%); }
+.dalton-hero-visual { isolation: isolate; }
+.dalton-hero-visual__orbit { position: absolute; width: 250px; height: 250px; border: 1px solid rgba(15,118,110,.16); border-radius: 50%; }
+.dalton-hero-visual__orbit--two { width: 195px; height: 195px; border-style: dashed; border-color: rgba(208,158,65,.4); transform: rotate(35deg) scaleX(1.4); }
+.dalton-hero-visual__sphere { position: absolute; border: 8px solid rgba(255,255,255,.8); border-radius: 50%; box-shadow: 0 20px 48px rgba(20,36,59,.13), inset -12px -15px 22px rgba(20,36,59,.13); }
+.dalton-hero-visual__sphere--large { width: 112px; height: 112px; background: radial-gradient(circle at 30% 25%,#c4f0e4,#0f766e 76%); transform: translate(-24px,-5px); }
+.dalton-hero-visual__sphere--small { width: 64px; height: 64px; background: radial-gradient(circle at 30% 25%,#ffedbb,#dfaa3f 76%); transform: translate(72px,56px); }
+.dalton-hero-visual__label { position: absolute; right: 0; bottom: 22px; display: grid; gap: 2px; padding: 10px 13px; border: 1px solid rgba(255,255,255,.9); border-radius: 11px; color: var(--navy); background: rgba(255,255,255,.9); box-shadow: 0 10px 28px rgba(20,36,59,.08); font-size: 9px; font-weight: 800; letter-spacing: .08em; }
+.dalton-hero-visual__label small { color: #82909d; font-size: 8px; font-weight: 600; letter-spacing: 0; }
+.dalton-objectives { margin-top: 19px; padding: 16px 18px; border: 1px solid #e2ece7; border-radius: 12px; background: rgba(255,255,255,.8); }
+.dalton-objectives > strong { color: var(--navy); font-family: Manrope,sans-serif; font-size: 11px; }
+.dalton-objectives ul { display: grid; gap: 8px; margin: 11px 0 0; padding-left: 18px; color: #65788a; font-size: 10px; line-height: 1.65; }
+.dalton-model { display: grid; grid-template-columns: 1fr 1fr auto 1.1fr; align-items: center; gap: 12px; margin: 21px 0; padding: 23px 18px 15px; border: 1px solid #e5edf0; border-radius: 15px; background: linear-gradient(145deg,#f8fbfa,#f6f7fc); }
+.dalton-model__group { display: grid; justify-items: center; gap: 5px; min-width: 0; }
+.dalton-model__atoms { display: flex; align-items: center; justify-content: center; min-height: 79px; gap: 5px; }
+.dalton-sphere { display: block; width: 30px; height: 30px; border-radius: 50%; box-shadow: inset -5px -6px 10px rgba(20,36,59,.15),0 5px 10px rgba(20,36,59,.08); }
+.dalton-sphere--teal { background: radial-gradient(circle at 30% 25%,#b9eee0,#0f766e 80%); }
+.dalton-sphere--gold { background: radial-gradient(circle at 30% 25%,#ffe9af,#d49a2e 80%); }
+.dalton-model__group strong { color: var(--navy); font-size: 10px; }
+.dalton-model__group small { color: #8493a0; font-size: 8px; text-align: center; }
+.dalton-model__arrow { color: #a9b5bf; font-size: 25px; font-weight: 400; }
+.dalton-model__atoms--bonded { position: relative; gap: 0; }
+.dalton-model__atoms--bonded::before { position: absolute; z-index: 0; width: 31px; height: 5px; border-radius: 4px; background: #b4c4c2; content: ''; }
+.dalton-model__atoms--bonded .dalton-sphere { position: relative; z-index: 1; }
+.dalton-model__caption { grid-column: 1 / -1; margin: 7px 0 0; padding-top: 12px; border-top: 1px solid #e8edef; color: #8794a0; font-size: 8px; line-height: 1.6; text-align: center; }
+.dalton-postulate-list { display: grid; gap: 10px; margin: 19px 0; }
+.dalton-postulate-card { display: grid; grid-template-columns: 42px 1fr; align-items: start; gap: 13px; padding: 15px; border: 1px solid #e7edf0; border-radius: 12px; background: #fff; }
+.dalton-postulate-card__number { display: grid; place-items: center; width: 37px; height: 37px; border-radius: 11px; color: var(--teal); background: #e7f6f0; font-family: Manrope,sans-serif; font-size: 11px; font-weight: 800; }
+.dalton-postulate-card h3 { margin: 1px 0 5px; color: var(--navy); font-family: Manrope,sans-serif; font-size: 13px; }
+.dalton-postulate-card p { margin: 0; color: #65778a; font-size: 10px; line-height: 1.75; }
+.dalton-postulate-card small { display: block; margin-top: 7px; color: #0f766e; font-size: 9px; font-weight: 700; line-height: 1.6; }
+.dalton-law-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 9px; margin: 19px 0; }
+.dalton-law-grid article { padding: 14px; border: 1px solid #e7edf0; border-radius: 12px; background: #fff; }
+.dalton-law-grid__tag { color: #0f766e; font-size: 7px; font-weight: 800; letter-spacing: .1em; }
+.dalton-law-grid h3 { margin: 8px 0 6px; font-size: 12px; line-height: 1.5; }
+.dalton-law-grid p { margin: 0; color: #718194; font-size: 9px; line-height: 1.7; }
+.dalton-reaction-example { margin: 19px 0; padding: 18px; border: 1px solid #e0ebe7; border-radius: 14px; background: #f4faf7; }
+.dalton-reaction-example__equation { display: flex; align-items: center; justify-content: center; gap: 17px; margin: 16px 0; color: var(--navy); font-family: Manrope,sans-serif; font-size: clamp(20px,3vw,28px); font-weight: 800; }
+.dalton-reaction-example__equation svg { color: var(--teal); }
+.dalton-reaction-example__equation strong { color: var(--teal); }
+.dalton-reaction-example__counts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.dalton-reaction-example__counts span { padding: 10px; border-radius: 8px; color: #65788a; background: #fff; font-size: 9px; line-height: 1.6; }
+.dalton-reaction-example__counts strong { color: var(--navy); }
+.dalton-reaction-example > p { margin: 12px 0 0; color: #6f837d; font-size: 9px; line-height: 1.7; }
+.dalton-limitation-list { display: grid; gap: 9px; margin: 18px 0; }
+.dalton-limitation-list > div { display: grid; grid-template-columns: 31px 1fr; gap: 11px; padding: 13px; border: 1px solid #e8edf0; border-radius: 11px; background: #fff; }
+.dalton-limitation-list__number { display: grid; place-items: center; width: 27px; height: 27px; border-radius: 8px; color: #a06f1f; background: #fff3d7; font-size: 10px; font-weight: 800; }
+.dalton-limitation-list strong { color: var(--navy); font-size: 11px; }
+.dalton-limitation-list p { margin: 5px 0 0; color: #728195; font-size: 9px; line-height: 1.7; }
+.dalton-timeline { position: relative; display: grid; gap: 0; margin: 20px 0; padding-left: 13px; }
+.dalton-timeline::before { position: absolute; top: 9px; bottom: 11px; left: 40px; width: 1px; background: #dce8e3; content: ''; }
+.dalton-timeline article { position: relative; display: grid; grid-template-columns: 56px 1fr; gap: 14px; padding: 0 0 20px; }
+.dalton-timeline article:last-child { padding-bottom: 0; }
+.dalton-timeline__year { z-index: 1; display: grid; place-items: center; width: 54px; height: 29px; border: 1px solid #dcece5; border-radius: 8px; color: var(--teal); background: #f1faf6; font-family: Manrope,sans-serif; font-size: 10px; font-weight: 800; }
+.dalton-timeline article strong { color: var(--navy); font-size: 11px; }
+.dalton-timeline article p { margin: 5px 0 0; color: #718195; font-size: 9px; line-height: 1.7; }
+.dalton-isotope-example { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 15px; margin: 19px 0; padding: 17px; border: 1px solid #e6edf0; border-radius: 13px; background: #f8fafc; }
+.dalton-isotope-example h3 { margin: 5px 0 6px; font-size: 14px; }
+.dalton-isotope-example p { margin: 0; color: #718195; font-size: 9px; line-height: 1.7; }
+.dalton-isotope-example__visual { display: flex; justify-content: center; gap: 10px; }
+.dalton-isotope-example__visual > div { display: grid; justify-items: center; gap: 5px; min-width: 72px; padding: 10px 8px; border: 1px solid #e4edf0; border-radius: 9px; background: #fff; }
+.dalton-isotope-example__visual strong { color: var(--teal); font-family: Manrope,sans-serif; font-size: 21px; }
+.dalton-isotope-example__visual span { color: #82909c; font-size: 8px; line-height: 1.5; text-align: center; }
+.dalton-compare-table-wrap { overflow-x: auto; margin: 18px 0; border: 1px solid #e6edf0; border-radius: 12px; }
+.dalton-compare-table { min-width: 560px; }
+.dalton-compare-table td:first-child { color: var(--navy); font-weight: 800; }
+@media (max-width: 760px) {
+  .dalton-model { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .dalton-model__arrow { display: none; }
+  .dalton-model__group--compound { grid-column: 1 / -1; }
+  .dalton-law-grid { grid-template-columns: 1fr; }
+  .dalton-law-grid article { padding: 13px; }
+  .dalton-isotope-example { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .dalton-reaction-example__counts { grid-template-columns: 1fr; }
+  .dalton-reaction-example__equation { gap: 10px; font-size: 20px; }
+  .dalton-postulate-card { grid-template-columns: 34px 1fr; gap: 10px; padding: 12px; }
+  .dalton-postulate-card__number { width: 32px; height: 32px; }
+}

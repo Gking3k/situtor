@@ -1,0 +1,50 @@
+.u9-curriculum-lesson-page { --u9-water: #287e9e; --u9-water-dark: #235c76; }
+.u9-lesson-hero { background: linear-gradient(128deg, #edf7fb 0%, #f4f8fb 55%, #edf7f2 100%); }
+.u9-hero-art .lesson-hero__visual-core { color: #287e9e; background: rgba(255,255,255,.78); }
+.u9-plain-words { margin: 0 0 1.15rem; padding: 1.1rem 1.25rem; border: 1px solid #cfe5ed; border-left: 5px solid #3489a7; border-radius: 14px; background: #f1f8fb; color: #294f66; }
+.u9-plain-words > span { display: block; margin-bottom: .48rem; color: #287e9e; font-size: .72rem; line-height: 1.35; font-weight: 850; letter-spacing: .09em; }
+.u9-plain-words > div { font-size: 1.03rem; line-height: 1.72; font-weight: 560; }
+.u9-diagram-card { width: 100%; margin: 1.35rem 0 1.6rem; padding: clamp(.7rem, 2vw, 1.2rem); border: 1px solid #d7e6ed; border-radius: 18px; background: #fbfdff; box-shadow: 0 8px 24px rgba(34,75,99,.045); }
+.u9-diagram-card svg { display: block; width: 100%; height: auto; max-width: 100%; overflow: visible; }
+.u9-diagram-card--scroll { overflow-x: auto; overscroll-behavior-x: contain; }
+.u9-diagram-card--scroll svg { min-width: min(720px, 100%); }
+.u9-caption { margin: .85rem .2rem .1rem; color: #627f93; font-size: .9rem; line-height: 1.65; text-align: center; }
+.u9-formula-panel { margin-top: 1.2rem; }
+.u9-worked-example { margin-top: 1.15rem; }
+.u9-concept-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .85rem; margin: 1rem 0; }
+.u9-concept-grid article { min-width: 0; padding: 1rem; border: 1px solid #d8e7ed; border-radius: 13px; background: #f7fbfd; }
+.u9-concept-grid article strong { color: #285c75; }
+.u9-concept-grid article p { margin: .45rem 0 0; font-size: .94rem; line-height: 1.6; }
+.u9-step-list, .u9-check-list { display: grid; gap: .75rem; padding-left: 1.35rem; }
+.u9-step-list li, .u9-check-list li { padding-left: .25rem; line-height: 1.7; }
+.u9-check-list { list-style: none; padding-left: 0; }
+.u9-check-list li { position: relative; padding-left: 1.8rem; }
+.u9-check-list li::before { content: '✓'; position: absolute; left: 0; top: .03rem; display: grid; width: 1.25rem; height: 1.25rem; place-items: center; border-radius: 50%; color: #fff; background: #3b9478; font-size: .8rem; font-weight: 900; }
+.u9-curriculum-lesson-page .lesson-section h3 { margin-top: 1.25rem; color: #294f66; }
+.u9-curriculum-lesson-page .lesson-section p { line-height: 1.78; }
+.u9-curriculum-lesson-page .lesson-section li { line-height: 1.72; }
+@media (max-width: 760px) {
+  .u9-concept-grid { grid-template-columns: 1fr; }
+  .u9-diagram-card { border-radius: 13px; padding: .65rem; }
+  .u9-diagram-card--scroll svg { min-width: 680px; }
+  .u9-caption { font-size: .84rem; text-align: left; }
+  .u9-plain-words { padding: .95rem; }
+  .u9-plain-words > div { font-size: .98rem; }
+}
+
+/* Unit 09 diagram readability refinements */
+.u9-diagram-card { box-sizing: border-box; min-width: 0; }
+.u9-diagram-card:not(.u9-diagram-card--scroll) { overflow: hidden; }
+.u9-diagram-card svg { font-family: Inter, Arial, Helvetica, sans-serif; }
+.u9-diagram-card .u9-caption { max-width: 78ch; margin-inline: auto; white-space: normal; overflow-wrap: break-word; }
+
+/* Keep each figure scrollable independently; its explanatory caption remains fully visible. */
+.u9-diagram-viewport { width: 100%; min-width: 0; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scrollbar-gutter: stable; }
+.u9-diagram-viewport svg { display: block; width: 100%; min-width: 0; max-width: 100%; height: auto; margin-inline: auto; }
+.u9-diagram-card:not(.u9-diagram-card--scroll) { overflow: visible; }
+@media (max-width: 760px) { .u9-diagram-viewport svg { width: 760px; min-width: 760px; max-width: none; } }
+
+/* Detailed Unit 9 cross-sections and apparatus figures retain readable SVG text. */
+.u9-diagram-viewport--detailed { width: 100%; min-width: 0; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scrollbar-gutter: stable; border-radius: 12px; }
+.u9-diagram-viewport--detailed svg { display: block; width: 100%; min-width: 1040px; max-width: 100%; height: auto; margin-inline: auto; }
+@media (max-width: 760px) { .u9-diagram-viewport--detailed svg { width: 1180px; min-width: 1180px; max-width: none; } }

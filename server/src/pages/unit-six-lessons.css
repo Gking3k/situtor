@@ -1,0 +1,113 @@
+.unit-six-lesson-hero { background: radial-gradient(circle at 78% 35%, rgba(47, 129, 153, .16), transparent 31%), linear-gradient(140deg, #f1f8fc 0%, #eef6f7 55%, #f4f2fc 100%); }
+.unit-six-hero-art .lesson-hero__visual-core { color: #fff; background: linear-gradient(145deg, #267f92, #43518d); box-shadow: 0 22px 48px rgba(35, 92, 126, .2); }
+.unit-six-hero-art .lesson-hero__visual-tag--bottom { max-width: 235px; font-size: 12px; }
+.u6-note { margin: 17px 0; padding: 13px 15px; border-left: 3px solid #4c7d9c; border-radius: 0 11px 11px 0; color: #5e7184; background: #f1f6fb; font-size: 11px; line-height: 1.8; }
+.u6-note--mint { border-left-color: #329275; background: #eff9f4; color: #3d695a; }
+.u6-note--amber { border-left-color: #c1843e; background: #fff8ed; color: #795c3e; }
+.u6-note--lavender { border-left-color: #8c72b2; background: #f6f3fb; color: #65577a; }
+.u6-note--rose { border-left-color: #bd716b; background: #fff5f3; color: #805955; }
+.u6-table-wrap { overflow-x: auto; margin: 18px 0; border: 1px solid #e2eaf0; border-radius: 12px; background: #fff; }
+.u6-table { width: 100%; min-width: 520px; border-collapse: collapse; text-align: left; }
+.u6-table th { padding: 11px 13px; color: #65778a; background: #f2f6fa; font-size: 10px; font-weight: 800; }
+.u6-table td { padding: 11px 13px; border-top: 1px solid #edf1f4; color: #63768a; font-size: 10px; line-height: 1.75; vertical-align: top; }
+.u6-table td:first-child { color: #1f3c56; font-weight: 700; }
+.u6-steps { display: grid; gap: 10px; margin: 18px 0; }
+.u6-steps article { display: flex; align-items: flex-start; gap: 12px; padding: 13px 14px; border: 1px solid #e4ebf1; border-radius: 12px; background: #fff; }
+.u6-steps article > span { display: grid; flex: 0 0 auto; place-items: center; width: 29px; height: 29px; border-radius: 9px; color: #2d6982; background: #eaf4f8; font-size: 10px; font-weight: 800; }
+.u6-steps h3 { margin: 0 0 5px; color: #1d3b54; font-family: Manrope, sans-serif; font-size: 12px; }
+.u6-steps p { margin: 0; color: #687b8e; font-size: 10px; line-height: 1.8; }
+.u6-formula { margin: 18px 0; padding: 17px; border: 1px solid #dfe8f0; border-radius: 14px; background: linear-gradient(145deg, #f1f7fc, #f8fbfd); }
+.u6-kicker { display: block; color: #32728a; font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.u6-formula__display { overflow-x: auto; margin: 10px 0 13px; color: #183b58; font-family: Manrope, sans-serif; font-size: clamp(15px, 2vw, 21px); font-weight: 800; line-height: 1.6; white-space: normal; }
+.u6-formula ol { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; }
+.u6-formula li { display: grid; gap: 3px; padding-top: 9px; border-top: 1px solid #dfe8f0; }
+.u6-formula li b { color: #2b4a64; font-size: 10px; }
+.u6-formula li span { color: #667b8e; font-size: 10px; line-height: 1.75; }
+.u6-diagram-card { overflow-x: auto; overflow-y: hidden; overscroll-behavior-inline: contain; scrollbar-gutter: stable; margin: 19px 0; padding: 14px; border: 1px solid #e1e9ef; border-radius: 14px; background: #fbfdff; }
+.u6-diagram-card svg { display: block; width: 100%; min-width: 600px; max-width: none; height: auto; max-height: none; margin: 0 auto; }
+.u6-diagram-card:focus-visible { outline: 3px solid #5a9bb8; outline-offset: 3px; }
+.u6-shell-diagram-group { margin: 18px 0; }
+.u6-shell-diagram-group .u6-shell-diagram { margin: 0; }
+.u6-shell-diagram-group > .u6-caption { margin-top: 10px; }
+@media (max-width: 640px) { .u6-diagram-card::after { content: "Swipe or scroll horizontally to view the full diagram"; display: block; padding: 7px 4px 0; color: #718498; font-size: 9px; line-height: 1.5; text-align: center; } }
+.u6-caption { margin: 9px 4px 0; color: #718498; font-size: 10px; line-height: 1.75; text-align: center; }
+.u6-periodic-scroll { overflow-x: auto; padding-bottom: 5px; }
+.u6-periodic-grid { display: grid; grid-template-columns: 55px repeat(18, minmax(43px, 1fr)); grid-template-rows: 27px repeat(4, 76px); gap: 4px; min-width: 900px; }
+.u6-periodic-corner, .u6-group-number { display: grid; place-items: center; color: #627b8d; background: #eef4f8; border-radius: 6px; font-size: 9px; font-weight: 800; text-align: center; }
+.u6-period-row { display: contents; }
+.u6-period-row > b { display: grid; place-items: center; border-radius: 6px; color: #627b8d; background: #eef4f8; font-size: 11px; }
+.u6-element { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1px; min-width: 0; border: 1px solid #dce7ef; border-radius: 7px; padding: 3px 1px; }
+.u6-element small { align-self: flex-start; padding-left: 4px; color: #71879a; font-size: 8px; }
+.u6-element strong { font-size: 17px; line-height: 1.1; color: #244a66; }
+.u6-element span { font-size: 7px; line-height: 1.1; color: #60788a; text-align: center; }
+.u6-element--metal { background: #eaf3fb; border-color: #bfd6e6; }
+.u6-element--metalloid { background: #f5f0fb; border-color: #d9cceb; }
+.u6-element--nonmetal { background: #eff8f4; border-color: #cbe5d7; }
+.u6-element--noble { background: #fff7e9; border-color: #efdcb8; }
+.u6-empty-cell { border-radius: 6px; background: transparent; }
+.u6-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 13px; margin-top: 12px; color: #657b8d; font-size: 9px; }
+.u6-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.u6-dot { width: 9px; height: 9px; display: inline-block; border-radius: 3px; }
+.u6-dot--metal { background: #9fc2dd; }.u6-dot--metalloid { background: #c4addf; }.u6-dot--nonmetal { background: #9bcbb5; }.u6-dot--noble { background: #edc77e; }
+.u6-electron-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.u6-electron-grid article { position: relative; display: flex; min-height: 91px; flex-direction: column; justify-content: center; align-items: center; gap: 2px; border: 1px solid #dce8ef; border-radius: 10px; background: linear-gradient(145deg,#fff,#f2f8fc); }
+.u6-electron-grid small { position: absolute; top: 6px; left: 8px; color: #70849a; font-size: 8px; }
+.u6-electron-grid strong { color: #1c526d; font-family: Manrope,sans-serif; font-size: 22px; }
+.u6-electron-grid span { color: #667a8d; font-size: 9px; }
+.u6-electron-grid b { color: #277c91; font-size: 10px; letter-spacing: .04em; }
+.u6-shell-diagram { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; margin: 18px 0; }
+.u6-shell-card { display: grid; grid-template-columns: minmax(150px, 1fr); justify-items: center; padding: 10px; border: 1px solid #e1e9ef; border-radius: 13px; background: #fbfdff; }
+.u6-shell-card svg { display: block; width: min(100%, 260px); height: auto; }
+.u6-shell-card div { display: grid; gap: 3px; text-align: center; }
+.u6-shell-card strong { color: #1e405a; font-size: 12px; }.u6-shell-card span { color: #667c8f; font-size: 10px; }
+@media (max-width: 760px) { .u6-electron-grid { grid-template-columns: repeat(4,minmax(0,1fr)); } .u6-shell-diagram { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .u6-electron-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } .u6-formula { padding: 13px; } }
+
+
+/* Phase 6.17: responsive diagram and label corrections */
+.u6-coordinate-card .u6-diagram-desktop { display: block; }
+.u6-coordinate-card .u6-diagram-mobile { display: none; }
+@media (max-width: 640px) {
+  .u6-coordinate-card { overflow-x: visible; }
+  .u6-coordinate-card .u6-diagram-desktop { display: none; }
+  .u6-coordinate-card .u6-diagram-mobile {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .u6-coordinate-card::after { content: none; }
+}
+
+
+/* Phase 6.18: diagrams with deliberate internal whitespace scale to the card on desktop. */
+.u6-diagram-card.u6-fit-card > svg {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 640px) {
+  .u6-diagram-card.u6-fit-card > svg {
+    width: 600px;
+    min-width: 600px;
+    max-width: none;
+  }
+}
+
+
+/* Phase 6.21: keep heating-curve labels out of the plotted line. */
+.u6-diagram-card.u6-heating-curve-card { overflow: visible; }
+.u6-diagram-card.u6-heating-curve-card::after { display: none; }
+.u6-heating-curve-svg { display: block; width: 100% !important; min-width: 0 !important; max-width: 100%; height: auto; margin: 0 auto; }
+.u6-heating-stage-key { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 10px 2px 0; }
+.u6-heating-stage-key article { display: flex; align-items: flex-start; gap: 8px; min-width: 0; padding: 10px 9px; border: 1px solid #e1e9ef; border-radius: 10px; background: #fff; }
+.u6-heating-stage-key article > span { display: grid; place-items: center; flex: 0 0 22px; width: 22px; height: 22px; border-radius: 50%; color: #fff; background: #244a66; font-size: 10px; font-weight: 800; }
+.u6-heating-stage-key article > div { display: grid; gap: 4px; min-width: 0; }
+.u6-heating-stage-key strong { color: #2b4a64; font-size: 10px; line-height: 1.35; }
+.u6-heating-stage-key small { color: #718498; font-size: 9px; line-height: 1.5; }
+@media (max-width: 900px) { .u6-heating-stage-key { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .u6-heating-stage-key { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; } .u6-heating-stage-key article { padding: 9px 8px; } }
+@media (max-width: 360px) { .u6-heating-stage-key { grid-template-columns: 1fr; } }

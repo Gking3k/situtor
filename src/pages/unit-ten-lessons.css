@@ -1,0 +1,74 @@
+/* Unit 10 — Carbon and Its Compounds. Explanations and diagrams use a calm, high-contrast visual system. */
+.u10-curriculum-lesson-page { --u10-ink: #254e68; --u10-blue: #2f7898; --u10-line: #d7e5ed; }
+.u10-lesson-hero { background: linear-gradient(128deg, #edf6fb 0%, #f8fafc 54%, #f3f5ef 100%); }
+.u10-hero-art .lesson-hero__visual-core { color: #2f7898; background: rgba(255,255,255,.86); }
+.u10-hero-art .lesson-hero__visual-orbit { border-color: rgba(47,120,152,.28); }
+.u10-hero-art .lesson-hero__visual-orbit--two { border-color: rgba(109,145,95,.22); }
+.u10-hero-art .lesson-hero__visual-tag { color: #2e718d; }
+
+.u10-plain-words { margin: 0 0 1.15rem; padding: 1.05rem 1.25rem; border: 1px solid #cfe0e9; border-left: 5px solid #387f9d; border-radius: 14px; background: #f1f7fa; color: #294e65; }
+.u10-plain-words > span { display: block; margin-bottom: .45rem; color: #2f7898; font-size: .72rem; line-height: 1.35; font-weight: 850; letter-spacing: .09em; }
+.u10-plain-words > div { font-size: 1.02rem; line-height: 1.75; font-weight: 560; }
+.u10-note { margin: 1rem 0; padding: .9rem 1rem; border: 1px solid #d1e2ea; border-left: 4px solid #4d8eaa; border-radius: 11px; background: #f3f8fb; color: #3e5d72; font-size: .92rem; line-height: 1.72; }
+.u10-note--mint { border-color: #cfe5d8; border-left-color: #4b9978; background: #f1f8f3; color: #345e4d; }
+.u10-note--amber { border-color: #eedbbb; border-left-color: #bf873d; background: #fff8ed; color: #73562f; }
+.u10-note--lavender { border-color: #ded9ee; border-left-color: #8b7cb5; background: #f7f5fc; color: #594d79; }
+.u10-curriculum-lesson-page .lesson-section h3 { margin: 1.2rem 0 .45rem; color: #294f68; font-family: Manrope, Inter, sans-serif; font-size: 1.03rem; }
+.u10-curriculum-lesson-page .lesson-section p { line-height: 1.78; }
+.u10-curriculum-lesson-page .lesson-section li { line-height: 1.75; }
+.u10-list, .u10-step-list { display: grid; gap: .72rem; margin: .9rem 0 1.1rem; padding-left: 1.35rem; color: #546d80; }
+.u10-list li, .u10-step-list li { padding-left: .2rem; }
+.u10-list strong, .u10-step-list strong { color: #2d536c; }
+
+.u10-diagram-card { box-sizing: border-box; width: 100%; min-width: 0; margin: 1.25rem 0 1.55rem; padding: clamp(.65rem, 1.8vw, 1rem); border: 1px solid #d8e6ed; border-radius: 17px; background: #fbfdff; box-shadow: 0 8px 22px rgba(36,76,100,.045); }
+.u10-diagram-scroll { width: 100%; min-width: 0; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scrollbar-gutter: stable; border-radius: 11px; }
+.u10-diagram-scroll:focus-visible { outline: 3px solid #5d9eb6; outline-offset: 3px; }
+.u10-diagram-scroll svg { display: block; width: 100%; min-width: 0; max-width: 100%; height: auto; margin-inline: auto; font-family: Inter, Arial, Helvetica, sans-serif; }
+.u10-diagram-card figcaption { max-width: 82ch; margin: .8rem auto .1rem; color: #657f92; font-size: .88rem; line-height: 1.68; text-align: center; overflow-wrap: break-word; }
+.u10-diagram-scroll svg text { user-select: text; }
+
+.u10-formula-panel { margin: 1.15rem 0; padding: 1rem 1.1rem; border: 1px solid #d7e5ed; border-radius: 14px; background: linear-gradient(145deg, #f1f7fa, #fbfdff); }
+.u10-eyebrow { display: block; color: #327b97; font-size: .7rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+.u10-formula-panel__formula { margin: .65rem 0; color: #173f59; font-family: Manrope, Inter, sans-serif; font-size: clamp(1.1rem, 2.4vw, 1.45rem); font-weight: 850; line-height: 1.55; overflow-wrap: anywhere; text-align: center; }
+.u10-formula-panel__variables { margin: 0 0 .8rem; color: #526e83; font-size: .84rem; line-height: 1.75; }
+.u10-formula-panel ol { display: grid; gap: .55rem; margin: 0; padding: 0; list-style: none; }
+.u10-formula-panel li { display: grid; gap: .2rem; padding-top: .65rem; border-top: 1px solid #e1eaf0; }
+.u10-formula-panel li strong { color: #294f68; font-size: .83rem; }
+.u10-formula-panel li span { color: #5c7487; font-size: .84rem; line-height: 1.7; }
+.u10-worked-example { margin: 1.2rem 0; overflow: hidden; border: 1px solid #d8e5ed; border-radius: 15px; background: #fff; box-shadow: 0 8px 22px rgba(36,76,100,.04); }
+.u10-worked-example__head { padding: .9rem 1rem .7rem; border-bottom: 1px solid #e0eaf0; background: #f2f7fa; }
+.u10-worked-example__head h3 { margin: .3rem 0 0; color: #244e67; font-size: 1rem; }
+.u10-worked-example__given { display: grid; gap: .3rem; padding: .75rem 1rem; color: #526b7e; font-size: .86rem; line-height: 1.7; }
+.u10-worked-example__given p { margin: 0; }
+.u10-worked-example__given > strong, .u10-worked-example__answer > strong { color: #315b75; font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
+.u10-worked-example ol { display: grid; gap: 0; margin: 0; padding: 0 1rem; list-style: none; }
+.u10-worked-example ol li { display: flex; align-items: flex-start; gap: .65rem; padding: .7rem 0; border-top: 1px solid #edf1f4; color: #536d80; font-size: .86rem; line-height: 1.72; }
+.u10-worked-example ol li > span { display: grid; flex: 0 0 1.45rem; width: 1.45rem; height: 1.45rem; place-items: center; border-radius: 50%; background: #eaf3f8; color: #2b6d88; font-size: .72rem; font-weight: 850; }
+.u10-worked-example ol li > div { min-width: 0; }
+.u10-worked-example ol li p { margin: 0; }
+.u10-worked-example__answer { display: grid; gap: .25rem; margin: .3rem .8rem .8rem; padding: .75rem .85rem; border-radius: 10px; background: #eff8f2; color: #315d4b; font-size: .87rem; line-height: 1.7; }
+.u10-worked-example__answer p { margin: 0; }
+.u10-table-wrap { width: 100%; margin: 1rem 0; overflow-x: auto; border: 1px solid #dfe8ed; border-radius: 12px; }
+.u10-table { width: 100%; min-width: 570px; border-collapse: collapse; background: #fff; color: #526b80; font-size: .83rem; line-height: 1.68; }
+.u10-table th { padding: .65rem .75rem; background: #f0f6f9; color: #284d66; text-align: left; font-size: .75rem; }
+.u10-table td { padding: .68rem .75rem; border-top: 1px solid #eaf0f3; vertical-align: top; }
+.u10-table td b { color: #2d536c; }
+.u10-concept-grid, .u10-process-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; margin: 1rem 0; }
+.u10-concept-grid article, .u10-process-grid article { min-width: 0; padding: .9rem; border: 1px solid #dae6ec; border-radius: 12px; background: #f8fbfd; }
+.u10-concept-grid article strong, .u10-process-grid article h3 { color: #2c5973; }
+.u10-concept-grid article p, .u10-process-grid article p { margin: .35rem 0 0; color: #5e7487; font-size: .88rem; line-height: 1.65; }
+.u10-process-grid article > span { color: #367d98; font-size: .68rem; font-weight: 850; letter-spacing: .06em; }
+.u10-process-grid article h3 { margin: .25rem 0 .3rem; font-size: 1rem; }
+.u10-mini-structure { margin-top: .55rem; color: #327a99; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
+.u10-equation-strip { display: grid; gap: .35rem; margin: .9rem 0; padding: .85rem 1rem; border: 1px solid #d8e6ed; border-radius: 12px; background: #f1f7fa; text-align: center; }
+.u10-equation-strip strong { color: #1e4f6a; font-family: Manrope, Inter, sans-serif; font-size: clamp(1.05rem, 2.5vw, 1.4rem); line-height: 1.55; overflow-wrap: anywhere; }
+.u10-equation-strip span { color: #5a7387; font-size: .82rem; line-height: 1.65; }
+
+@media (max-width: 760px) {
+  .u10-diagram-card { border-radius: 13px; padding: .55rem; }
+  .u10-diagram-scroll svg { width: 760px; min-width: 760px; max-width: none; }
+  .u10-diagram-card figcaption { font-size: .82rem; text-align: left; }
+  .u10-concept-grid, .u10-process-grid { grid-template-columns: 1fr; }
+  .u10-table { min-width: 520px; }
+  .u10-formula-panel { padding: .85rem; }
+}

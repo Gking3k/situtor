@@ -1,0 +1,130 @@
+.student-dashboard-page {
+  min-height: 70vh;
+  padding: 56px 0 88px;
+  background:
+    radial-gradient(ellipse at 8% 0%, rgba(220, 244, 237, .72), transparent 31%),
+    #f6f9f8;
+}
+.student-dashboard { max-width: 1180px; }
+.student-dashboard__topline { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
+.student-dashboard__eyebrow { display: inline-flex; align-items: center; gap: 7px; color: #a0791f; font-size: 9px; font-weight: 850; letter-spacing: .16em; }
+.student-dashboard__topline h1 { margin: 13px 0 8px; color: var(--navy); font: 800 clamp(32px, 4vw, 46px)/1.08 Manrope, sans-serif; letter-spacing: -.06em; }
+.student-dashboard__topline p { margin: 0; color: #748496; font-size: 13px; line-height: 1.7; }
+.student-dashboard__account-pill { display: flex; align-items: center; gap: 11px; padding: 10px 14px 10px 10px; border: 1px solid #e4ece9; border-radius: 14px; background: rgba(255,255,255,.86); }
+.student-dashboard__avatar { display: grid; place-items: center; width: 39px; height: 39px; border-radius: 12px; color: #0f766e; background: #e4f5ef; font: 800 16px Manrope, sans-serif; }
+.student-dashboard__account-pill > span:last-child { display: grid; gap: 3px; }
+.student-dashboard__account-pill strong { max-width: 190px; overflow: hidden; color: var(--navy); font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.student-dashboard__account-pill small { color: #8b99a6; font-size: 9px; }
+.student-dashboard__stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 35px; }
+.student-stat-card { display: flex; align-items: center; gap: 13px; min-width: 0; padding: 18px 19px; border: 1px solid #e7eeeb; border-radius: 15px; background: #fff; box-shadow: 0 8px 24px rgba(20,36,59,.035); }
+.student-stat-card__icon { display: grid; place-items: center; width: 42px; height: 42px; flex: 0 0 auto; border-radius: 13px; }
+.student-stat-card__icon--green { color: #0f766e; background: #e5f5ef; }
+.student-stat-card__icon--gold { color: #a77816; background: #fff5d9; }
+.student-stat-card__icon--blue { color: #456c9a; background: #edf3fb; }
+.student-stat-card > div { display: grid; gap: 4px; min-width: 0; }
+.student-stat-card strong { color: var(--navy); font: 800 15px Manrope, sans-serif; }
+.student-stat-card span:last-child { color: #8a98a5; font-size: 10px; }
+.student-dashboard__content-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(280px, .8fr); align-items: start; gap: 25px; }
+.student-section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 14px; margin-bottom: 15px; }
+.student-section-heading h2 { margin: 7px 0 0; color: var(--navy); font: 800 23px/1.2 Manrope, sans-serif; letter-spacing: -.045em; }
+.student-text-link { display: inline-flex; align-items: center; gap: 6px; color: #0f766e; font-size: 10px; font-weight: 800; text-decoration: none; }
+.student-text-link:hover, .student-help-card a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.student-course-card { overflow: hidden; border: 1px solid #e5ece9; border-radius: 19px; background: #fff; box-shadow: 0 12px 35px rgba(20,36,59,.045); }
+.student-course-card__visual { position: relative; display: grid; overflow: hidden; place-items: center; min-height: 170px; background: radial-gradient(circle at 50% 50%, #d9f2e8 0, #e8f5f0 43%, #dcebe6 100%); }
+.student-course-card__visual::before { position: absolute; width: 210px; height: 210px; border: 1px solid rgba(15,118,110,.19); border-radius: 50%; content: ''; }
+.student-course-card__visual::after { position: absolute; width: 148px; height: 148px; border: 1px dashed rgba(15,118,110,.24); border-radius: 50%; content: ''; }
+.student-course-card__orbit { position: absolute; width: 260px; height: 95px; border: 1px solid rgba(15,118,110,.24); border-radius: 50%; }
+.student-course-card__orbit--one { transform: rotate(32deg); }
+.student-course-card__orbit--two { transform: rotate(-32deg); }
+.student-course-card__molecule { position: relative; z-index: 1; display: flex; align-items: center; transform: rotate(-28deg); }
+.student-course-card__molecule::before, .student-course-card__molecule::after { position: absolute; z-index: -1; top: 50%; left: 50%; width: 95px; height: 2px; background: rgba(15,118,110,.38); content: ''; transform: translate(-50%, -50%) rotate(32deg); }
+.student-course-card__molecule::after { transform: translate(-50%, -50%) rotate(-32deg); }
+.student-course-card__molecule i { display: block; width: 27px; height: 27px; margin-inline: 3px; border: 4px solid #f8fffb; border-radius: 50%; background: #0f766e; box-shadow: 0 5px 12px rgba(15,118,110,.17); }
+.student-course-card__molecule i:nth-child(2) { width: 43px; height: 43px; background: #e6ae35; }
+.student-course-card__visual-label { position: absolute; right: 20px; bottom: 15px; color: #73958a; font-size: 8px; font-weight: 850; letter-spacing: .16em; }
+.student-course-card__body { padding: 23px 25px 25px; }
+.student-course-card__meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.student-course-card__meta span { padding: 6px 8px; border-radius: 6px; color: #0f766e; background: #e8f6f0; font-size: 8px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+.student-course-card__meta span + span { color: #9b741d; background: #fff6df; }
+.student-course-card__body h3 { margin: 14px 0 7px; color: var(--navy); font: 800 23px/1.18 Manrope, sans-serif; letter-spacing: -.04em; }
+.student-course-card__body > p { margin: 0; color: #7d8b98; font-size: 11px; line-height: 1.75; }
+.student-available-lesson { display: flex; align-items: center; gap: 11px; margin-top: 19px; padding: 12px 13px; border: 1px solid #e3eee9; border-radius: 12px; background: #f8fcfa; }
+.student-available-lesson__icon { display: grid; place-items: center; width: 36px; height: 36px; flex: 0 0 auto; border-radius: 10px; color: #0f766e; background: #e3f4ed; }
+.student-available-lesson > div:nth-child(2) { display: grid; gap: 4px; min-width: 0; flex: 1; }
+.student-available-lesson > div:nth-child(2) span { color: #a17a21; font-size: 8px; font-weight: 850; letter-spacing: .12em; }
+.student-available-lesson strong { color: var(--navy); font-size: 11px; line-height: 1.4; }
+.student-available-lesson > a { display: grid; place-items: center; width: 33px; height: 33px; flex: 0 0 auto; border-radius: 9px; color: #fff; background: #0f766e; transition: transform .2s ease, background .2s ease; }
+.student-available-lesson > a:hover { background: #0a625b; transform: translateX(2px); }
+.student-empty-lesson { margin-top: 18px; padding: 13px; border: 1px dashed #dce7e2; border-radius: 11px; color: #80918b; font-size: 10px; }
+.student-course-card__button { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; margin-top: 17px; padding-inline: 16px; font-size: 10px; }
+.student-progress-note { display: flex; align-items: flex-start; gap: 12px; margin-top: 15px; padding: 16px 17px; border: 1px solid #eee6cf; border-radius: 13px; background: #fffcf3; }
+.student-progress-note > span { display: grid; place-items: center; width: 30px; height: 30px; flex: 0 0 auto; border-radius: 9px; color: #a47819; background: #fff3d1; }
+.student-progress-note strong { color: #66552f; font-size: 10px; }
+.student-progress-note p { margin: 5px 0 0; color: #8c7d5f; font-size: 10px; line-height: 1.65; }
+.student-account-card { padding: 19px; border: 1px solid #e6edea; border-radius: 16px; background: #fff; box-shadow: 0 10px 28px rgba(20,36,59,.035); }
+.student-account-card__profile { display: flex; align-items: center; gap: 11px; padding-bottom: 18px; border-bottom: 1px solid #eef2f0; }
+.student-account-card__avatar { display: grid; place-items: center; width: 43px; height: 43px; flex: 0 0 auto; border-radius: 13px; color: #0f766e; background: #e5f5ef; }
+.student-account-card__profile > div { display: grid; gap: 4px; min-width: 0; }
+.student-account-card__profile strong { overflow-wrap: anywhere; color: var(--navy); font-size: 11px; }
+.student-account-card__profile span:last-child { overflow-wrap: anywhere; color: #8795a1; font-size: 9px; }
+.student-account-card__detail { display: flex; align-items: center; justify-content: space-between; gap: 9px; padding-top: 15px; }
+.student-account-card__detail > span { display: inline-flex; align-items: center; gap: 7px; color: #82918f; font-size: 9px; }
+.student-account-card__detail > span svg { color: #8da79e; }
+.student-account-card__detail > strong { color: #526476; font-size: 9px; text-align: right; }
+.student-account-card__detail > strong.is-verified { color: #0f766e; }
+.student-account-card__detail > strong.is-unverified { color: #a46d19; }
+.student-dashboard__help-card { margin-top: 15px; padding: 19px; border: 1px solid #e6eee8; border-radius: 15px; background: linear-gradient(140deg, #edf8f3, #fff 75%); }
+.student-dashboard__help-card > span { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 11px; color: #0f766e; background: #dff2e9; }
+.student-dashboard__help-card h3 { margin: 13px 0 6px; color: var(--navy); font: 800 15px Manrope, sans-serif; letter-spacing: -.025em; }
+.student-dashboard__help-card p { margin: 0; color: #7a8b8a; font-size: 10px; line-height: 1.7; }
+.student-dashboard__help-card a { display: inline-flex; align-items: center; gap: 6px; margin-top: 13px; color: #0f766e; font-size: 9px; font-weight: 850; text-decoration: none; }
+.student-auth-state { display: grid; place-content: center; justify-items: center; gap: 10px; min-height: 52vh; padding: 40px 20px; text-align: center; }
+.student-auth-state h1 { margin: 0; color: var(--navy); font: 800 25px Manrope, sans-serif; }
+.student-auth-state p { max-width: 390px; margin: 0 0 8px; color: #7a8996; font-size: 12px; line-height: 1.7; }
+.student-auth-state__spinner { width: 30px; height: 30px; border: 3px solid #dcece5; border-top-color: #0f766e; border-radius: 50%; animation: student-auth-spin .8s linear infinite; }
+@keyframes student-auth-spin { to { transform: rotate(360deg); } }
+@media (max-width: 850px) {
+  .student-dashboard__content-grid { grid-template-columns: minmax(0, 1fr); }
+  .student-account-panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: 14px; }
+  .student-account-panel > .student-section-heading { grid-column: 1 / -1; margin-bottom: 0; }
+  .student-dashboard__help-card { margin-top: 0; }
+}
+@media (max-width: 620px) {
+  .student-dashboard-page { padding: 38px 0 62px; }
+  .student-dashboard__topline { align-items: flex-start; flex-direction: column; }
+  .student-dashboard__account-pill { max-width: 100%; }
+  .student-dashboard__stats { grid-template-columns: 1fr; gap: 9px; margin-bottom: 28px; }
+  .student-stat-card { padding: 13px 15px; }
+  .student-stat-card__icon { width: 38px; height: 38px; }
+  .student-section-heading { align-items: flex-start; flex-direction: column; }
+  .student-course-card__body { padding: 20px 18px; }
+  .student-account-panel { grid-template-columns: minmax(0, 1fr); }
+  .student-account-panel > .student-section-heading { grid-column: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .student-auth-state__spinner { animation: none; }
+  .student-available-lesson > a { transition: none; }
+}
+
+/* Keep account details and section links readable at narrow viewport widths. */
+.student-section-heading { flex-wrap: wrap; }
+.student-dashboard__topline > div:first-child { min-width: 0; }
+.student-stat-card strong,
+.student-stat-card span:last-child,
+.student-course-card__body > p,
+.student-progress-note p { overflow-wrap: anywhere; }
+.student-account-card__detail { flex-wrap: wrap; }
+.student-account-card__detail > strong { overflow-wrap: anywhere; }
+
+/* Keep account details and section links readable at narrow viewport widths. */
+.student-section-heading { flex-wrap: wrap; }
+.student-dashboard__topline > div:first-child { min-width: 0; }
+.student-stat-card strong,
+.student-stat-card span:last-child,
+.student-course-card__body > p,
+.student-progress-note p { overflow-wrap: anywhere; }
+.student-account-card__detail { flex-wrap: wrap; }
+.student-account-card__detail > strong { overflow-wrap: anywhere; }
+
+.student-dashboard__content-grid > *,
+.student-account-panel > * { min-width: 0; }

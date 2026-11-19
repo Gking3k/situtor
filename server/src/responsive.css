@@ -1,0 +1,757 @@
+/* Si Tutor responsive hardening.
+   Loaded after the page styles so shared layout fixes apply consistently across all units. */
+
+:root {
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 320px;
+}
+
+body {
+  overflow-x: clip;
+}
+
+#root {
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+img,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+main,
+section,
+article,
+aside,
+header,
+footer,
+nav,
+.container,
+.lesson-content,
+.quiz-main-column {
+  min-width: 0;
+}
+
+/* Keep long science names, formulae and headings inside their own cards. */
+.section-heading,
+.section-heading-row,
+.curriculum-card,
+.curriculum-card__heading,
+.curriculum-summary__copy,
+.topic-card,
+.lesson-section,
+.lesson-section__heading > div,
+.lesson-next-card > div,
+.lesson-references,
+.quiz-question-card,
+.quiz-question-card__header,
+.quiz-question-prompt,
+.contact-placeholder,
+.privacy-content {
+  min-width: 0;
+}
+
+.section-heading h2,
+.inner-hero h1,
+.lesson-hero__copy h1,
+.quiz-hero h1,
+.curriculum-card__heading h2,
+.topic-card h3,
+.lesson-section h2,
+.lesson-section h3,
+.lesson-next-card h3,
+.quiz-question-prompt,
+.lesson-references h2 {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+/* Header dropdown is anchored to the sticky header, not the document viewport. */
+.site-header {
+  position: sticky;
+  isolation: isolate;
+}
+
+.mobile-nav {
+  top: 100%;
+  right: 0;
+  left: 0;
+  width: 100%;
+  max-height: min(72vh, 520px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-bottom: max(18px, env(safe-area-inset-bottom));
+}
+
+.mobile-nav > a:not(.button) {
+  min-height: 46px;
+}
+
+.mobile-menu-toggle {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+}
+
+/* Curriculum and information pages. */
+.curriculum-summary__copy p,
+.curriculum-lesson__text strong,
+.curriculum-lesson__text small {
+  overflow-wrap: anywhere;
+}
+
+.collection-status {
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.5;
+}
+
+.curriculum-lesson__arrow {
+  margin-left: auto;
+}
+
+.faq-search,
+.faq-search input,
+.faq-item__trigger,
+.faq-item__panel,
+.faq-group,
+.faq-side-note,
+.about-manifesto,
+.contact-layout > *,
+.feedback-type-list article > div {
+  min-width: 0;
+}
+
+.faq-item__trigger {
+  overflow-wrap: anywhere;
+}
+
+.faq-item__panel p,
+.privacy-content p,
+.contact-placeholder p,
+.feedback-type-list p {
+  overflow-wrap: anywhere;
+}
+
+/* Lesson reader: keep every content column shrinkable and every data table locally scrollable. */
+.lesson-layout,
+.lesson-content,
+.lesson-section,
+.lesson-section__heading,
+.lesson-section__heading > div {
+  min-width: 0;
+}
+
+.lesson-section > p,
+.lesson-section li,
+.lesson-insight p,
+.lesson-recap-list span,
+.lesson-references li,
+.lesson-right-card p {
+  overflow-wrap: anywhere;
+}
+
+.lesson-section__heading > div {
+  flex: 1 1 auto;
+}
+
+.lesson-table,
+.u2-table,
+.u3-table,
+.u4-table,
+.u5-table,
+.u6-table,
+.u7-table,
+.u10-table,
+.u11-table {
+  max-width: 100%;
+}
+
+.lesson-atomicity-table-wrap,
+.lesson-compare-table-wrap,
+.u2-table-wrap,
+.u3-table-wrap,
+.u4-table-wrap,
+.u5-table-wrap,
+.u6-table-wrap,
+.u7-table-wrap,
+.u10-table-wrap,
+.u11-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.lesson-visual-card,
+.lesson-atom-figure,
+.u3-diagram-card,
+.u4-diagram-card,
+.u6-diagram-card,
+.u7-diagram-card,
+.u8-diagram-card,
+.u9-diagram-card,
+.u10-diagram-card,
+.u11-diagram-card {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.lesson-atom-figure svg,
+.lesson-molecule-card__art svg,
+.u3-diagram-card svg,
+.u4-diagram-card svg,
+.u6-diagram-card svg,
+.u7-diagram-card svg,
+.u8-diagram-card svg,
+.u9-diagram-card svg,
+.u10-diagram-scroll svg,
+.u11-diagram-scroll svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Preserve readable, detailed figures on phones without creating page-level overflow. */
+.u6-diagram-card,
+.u7-diagram-card,
+.u8-diagram-card,
+.u9-diagram-viewport,
+.u9-diagram-viewport--detailed,
+.u10-diagram-scroll,
+.u11-diagram-scroll {
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+}
+
+/* Quiz controls remain easy to tap and readable on narrow devices. */
+.quiz-layout,
+.quiz-main-column,
+.quiz-progress-sidebar,
+.quiz-instructions,
+.quiz-submit-panel,
+.quiz-results,
+.quiz-review,
+.quiz-choice,
+.quiz-explanation {
+  min-width: 0;
+}
+
+.quiz-question-prompt,
+.quiz-choice__text,
+.quiz-explanation p,
+.quiz-instructions p,
+.quiz-form-message {
+  overflow-wrap: anywhere;
+}
+
+.quiz-choice {
+  min-height: 52px;
+}
+
+.quiz-choice input {
+  flex: 0 0 auto;
+}
+
+.quiz-choice__text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Medium screens: prevent dense cards and side-by-side copy from becoming cramped. */
+@media (max-width: 980px) {
+  .container {
+    width: min(100% - 40px, 860px);
+  }
+
+  .curriculum-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .value-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .u4-timeline-diagram {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .u6-heating-stage-key {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  html {
+    scroll-padding-top: 78px;
+  }
+
+  .container {
+    width: calc(100% - 36px);
+  }
+
+  .announcement-bar {
+    min-height: 34px;
+    flex-wrap: wrap;
+    padding: 7px 12px;
+    line-height: 1.45;
+    text-align: center;
+  }
+
+  .site-header__inner {
+    gap: 12px;
+  }
+
+  .brand__mark { width: 42px; height: 42px; }
+  .brand__wordmark { font-size: 25px; }
+
+  .site-header__actions {
+    margin-left: auto;
+  }
+
+  .section-space {
+    padding-block: 64px;
+  }
+
+  .section-heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .section-heading-row__link,
+  .collection-status {
+    align-self: flex-start;
+  }
+
+  .curriculum-summary {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    align-items: start;
+    gap: 10px 12px;
+    padding: 15px;
+  }
+
+  .curriculum-summary__copy {
+    grid-column: 2;
+  }
+
+  .curriculum-summary__tag {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .curriculum-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .curriculum-card {
+    padding: 18px;
+  }
+
+  .curriculum-card__heading h2 {
+    font-size: 18px;
+  }
+
+  .curriculum-lesson {
+    padding: 11px 10px;
+  }
+
+  .curriculum-lesson__text strong {
+    font-size: 12px;
+  }
+
+  .curriculum-lesson__text small {
+    font-size: 10px;
+  }
+
+  .lesson-hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lesson-breadcrumb {
+    gap: 7px;
+    letter-spacing: .08em;
+    line-height: 1.6;
+  }
+
+  .lesson-hero__copy h1 {
+    font-size: clamp(36px, 9.5vw, 52px);
+    line-height: 1.08;
+  }
+
+  .lesson-hero__visual-tag {
+    max-width: min(45%, 190px);
+    overflow-wrap: anywhere;
+  }
+
+  .lesson-section__heading {
+    align-items: flex-start;
+  }
+
+  .lesson-section__heading h2 {
+    font-size: clamp(24px, 7vw, 29px);
+  }
+
+  .lesson-next-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lesson-next-card__actions {
+    justify-items: stretch;
+  }
+
+  .lesson-next-card__actions .button {
+    width: 100%;
+  }
+
+  .lesson-references {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .lesson-bottom-nav {
+    gap: 10px;
+  }
+
+  .quiz-hero__content {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .quiz-hero__meta {
+    gap: 10px 14px;
+  }
+
+  .quiz-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .quiz-progress-sidebar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quiz-progress-card,
+  .quiz-side-tip {
+    min-width: 0;
+  }
+
+  .quiz-question-card {
+    padding: 16px;
+  }
+
+  .quiz-score-panel {
+    grid-template-columns: minmax(82px, .45fr) minmax(0, 1fr);
+  }
+
+  .quiz-results__actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .quiz-results__actions .button {
+    width: 100%;
+  }
+
+  .footer-links-group {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer-links-group > div {
+    min-width: 0;
+  }
+
+  .footer-links-group a {
+    overflow-wrap: anywhere;
+  }
+
+  .final-cta-card__copy {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .announcement-bar {
+    font-size: 9px;
+  }
+
+  .inner-hero__meta {
+    gap: 10px 14px;
+  }
+
+  .inner-hero__meta span {
+    font-size: 10px;
+  }
+
+  .curriculum-lesson__arrow {
+    width: 14px;
+  }
+
+  .lesson-section--intro {
+    padding: 19px 16px;
+  }
+
+  .lesson-section__heading {
+    gap: 9px;
+  }
+
+  .lesson-section__number {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+  }
+
+  .lesson-insight {
+    gap: 9px;
+    padding: 13px;
+  }
+
+  .lesson-next-card {
+    padding: 16px;
+  }
+
+  .lesson-references ul {
+    padding-left: 18px;
+  }
+
+  .quiz-progress-sidebar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .quiz-progress-card {
+    grid-template-columns: 34px minmax(0, 1fr);
+  }
+
+  .quiz-progress-card__count {
+    font-size: 23px;
+  }
+
+  .quiz-instructions {
+    align-items: stretch;
+  }
+
+  .quiz-instructions__pill {
+    align-self: flex-start;
+  }
+
+  .quiz-question-card__top {
+    align-items: flex-start;
+  }
+
+  .quiz-topic-pill {
+    max-width: 100%;
+    white-space: normal;
+    text-align: right;
+  }
+
+  .quiz-score-panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .quiz-score-panel__score {
+    padding: 0 0 10px;
+    border-right: 0;
+    border-bottom: 1px solid #e6edf0;
+  }
+
+  .footer-links-group {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 18px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-socials {
+    margin-top: 2px;
+  }
+
+  .u4-timeline-diagram {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .u6-heating-stage-key {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .brand__mark { width: 38px; height: 38px; }
+  .brand__wordmark { font-size: 23px; }
+
+  .hero-copy h1,
+  .inner-hero h1,
+  .lesson-hero__copy h1 {
+    font-size: clamp(34px, 10vw, 39px);
+  }
+
+  .lesson-hero__meta {
+    display: grid;
+    gap: 8px;
+  }
+
+  .lesson-hero__visual-tag {
+    padding: 7px 9px;
+    font-size: 14px;
+  }
+
+  .lesson-hero__visual-tag small {
+    font-size: 8px;
+  }
+
+  .quiz-choice {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .quiz-choice__letter {
+    flex: 0 0 25px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .u6-electron-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .u4-timeline-diagram {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .u6-heating-stage-key {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .site-header,
+  .mobile-nav,
+  .curriculum-card,
+  .button {
+    transition: none;
+  }
+}
+
+/* Older custom SVG figures in Unit 03 retain legible labels through a local scroll area. */
+@media (max-width: 620px) {
+  .u3-diagram-card {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .u3-diagram-card svg {
+    width: 560px;
+    min-width: 560px;
+    max-width: none;
+    max-height: none;
+  }
+
+  .u3-diagram-card p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Short landscape screens: keep the menu and hero content usable without excess vertical chrome. */
+@media (max-width: 760px) and (orientation: landscape) and (max-height: 520px) {
+  .hero-section {
+    padding-top: 28px;
+  }
+
+  .hero-art-wrap {
+    min-height: 245px;
+  }
+
+  .inner-hero__content,
+  .inner-hero--compact .inner-hero__content {
+    padding-block: 32px;
+  }
+
+  .lesson-hero__inner {
+    padding-bottom: 24px;
+  }
+
+  .lesson-hero__visual {
+    min-height: 190px;
+  }
+
+  .mobile-nav {
+    max-height: 65vh;
+  }
+}
+
+@media (max-width: 760px) {
+  .lesson-mobile-toc summary {
+    min-height: 46px;
+  }
+
+  .faq-search input {
+    min-height: 44px;
+    font-size: 16px;
+  }
+
+  .lesson-content pre,
+  .lesson-content code {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-bottom {
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 8px;
+    text-align: center;
+  }
+
+  .hero-bottom__line {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .u2-flow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .u2-flow-step {
+    padding-inline: 12px;
+  }
+}
